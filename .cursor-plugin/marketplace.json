@@ -1,25 +1,15 @@
 {
-  "name": "cursor-plugin-starters",
+  "name": "brightdata-cursor-plugin",
   "owner": {
-    "name": "Your Org",
-    "email": "plugins@example.com"
+    "name": "Bright Data",
+    "email": "support@brightdata.com"
   },
   "metadata": {
-    "description": "Starter marketplace template for Cursor plugins",
+    "description": "Bright Data Cursor plugin for web search, scraping, browser automation, and structured data",
     "version": "0.1.0",
     "pluginRoot": "plugins"
   },
   "plugins": [
-    {
-      "name": "starter-simple",
-      "source": "plugins/starter-simple",
-      "description": "Minimal plugin with rules and skills only"
-    },
-    {
-      "name": "starter-advanced",
-      "source": "plugins/starter-advanced",
-      "description": "Full-featured plugin with rules, skills, agents, commands, hooks, and MCP"
-    },
     {
       "name": "bright-data",
       "source": "plugins/bright-data",

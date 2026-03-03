@@ -1,0 +1,59 @@
+---
+description: Routing guide for Bright Data tools — which product to use for each web data task.
+alwaysApply: true
+---
+
+# Bright Data Tool Routing
+
+When working with web data inside Cursor, use the Bright Data MCP server. Pick the right product using this decision tree:
+
+## Decision Tree
+
+1. **Need live search engine results (Google, Bing, Yandex, etc.)?**
+   → Use `search_engine` MCP tool (SERP API).
+   → For multiple queries in one shot: use `search_engine_batch` (up to 10).
+   → Do NOT use scrape tools on search engine URLs — `search_engine` handles them correctly.
+
+2. **Need to fetch content from a specific URL that may block bots?**
+   → Use `scrape_as_markdown` (Web Unlocker) for clean, readable output.
+   → Use `scrape_as_html` when raw HTML is needed (e.g. DOM parsing, link extraction).
+   → For multiple URLs at once: use `scrape_batch` (up to 10 URLs).
+
+3. **Need structured data from a known platform (Amazon, LinkedIn, Instagram, TikTok, etc.)?**
+   → Use the matching `web_data_*` tool — it returns clean JSON, no parsing required.
+   → This requires `PRO_MODE=true` or the relevant `GROUPS` env var set in `mcp.json`.
+   → Always prefer `web_data_*` over browser automation for supported platforms.
+
+4. **Need to interact with a JS-heavy, dynamic, or login-gated page (click, type, scroll, fill forms)?**
+   → Use `scraping_browser_*` tools (Scraping Browser).
+   → Flow: `scraping_browser_navigate` → `scraping_browser_snapshot` → interact → extract.
+   → Requires a Browser zone (Pro tier).
+
+5. **Need AI-powered structured extraction from already-scraped content?**
+   → Use `extract` — pass Markdown content and an extraction prompt, get structured JSON back.
+
+## Quick Reference
+
+| Task | Tool |
+|------|------|
+| Google/Bing/Yandex search | `search_engine` |
+| Batch search (up to 10 queries) | `search_engine_batch` |
+| Scrape URL → Markdown | `scrape_as_markdown` |
+| Scrape URL → HTML | `scrape_as_html` |
+| Scrape multiple URLs | `scrape_batch` |
+| Amazon / LinkedIn / Instagram data | `web_data_amazon_*` / `web_data_linkedin_*` / etc. |
+| Browser interaction (click, type) | `scraping_browser_navigate` + `scraping_browser_*` |
+| AI extraction from page content | `extract` |
+| Session usage stats | `session_stats` |
+
+## Cost Awareness
+
+- **Free tier** (5,000 req/month): `search_engine`, `scrape_as_markdown`, `scrape_as_html`, `scrape_batch`, `search_engine_batch`, `extract`
+- **Pro tier** (pay-per-result): `scraping_browser_*`, `web_data_*`
+- Always prefer `web_data_*` over `scraping_browser_*` for supported platforms — it is faster and cheaper.
+- Run `/bd-status` to check session usage and available zones.
+
+## Setup
+
+Run `/bd-setup` to configure credentials and verify MCP connection.
+The MCP server requires `BRIGHT_DATA_API_TOKEN` set in environment or `mcp.json`.

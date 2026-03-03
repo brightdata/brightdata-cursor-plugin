@@ -1,0 +1,33 @@
+---
+description: Citation standards for Bright Data web search and scrape results. Applied when presenting findings from search_engine, scrape_as_markdown, or web_data_* tools.
+alwaysApply: false
+---
+
+# Citation Standards
+
+When presenting information sourced from Bright Data tools:
+
+## Inline Citations
+
+- **Every factual claim must carry an inline citation** using markdown links: [Source Title](URL)
+- Only cite URLs that appear in tool output — never invent or guess URLs
+- Do not leave any factual claim uncited
+
+## Response Structure
+
+- Lead with the key answer or finding
+- Include specific facts, names, numbers, and dates
+- Cite every fact inline as [Source Title](url)
+- Organize by theme when covering multiple topics
+
+## Sources Section
+
+**End every search or scrape response with a Sources section** listing all referenced URLs:
+
+```
+Sources:
+- [Source Title](https://example.com/article) (Mar 2026)
+- [Another Source](https://example.com/other) (Feb 2026)
+```
+
+This Sources section is mandatory. Do not omit it.

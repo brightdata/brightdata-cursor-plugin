@@ -1,0 +1,35 @@
+{
+  "name": "bright-data",
+  "displayName": "Bright Data",
+  "version": "0.1.0",
+  "description": "Web search, content extraction, structured data, and browser automation powered by Bright Data's web intelligence platform.",
+  "author": {
+    "name": "Bright Data",
+    "email": "support@brightdata.com"
+  },
+  "homepage": "https://brightdata.com",
+  "repository": "https://github.com/brightdata/brightdata-mcp",
+  "license": "MIT",
+  "logo": "assets/logo.png",
+  "keywords": [
+    "web-scraping",
+    "serp",
+    "proxy",
+    "browser-automation",
+    "web-unlocker",
+    "mcp",
+    "data-extraction",
+    "bright-data"
+  ],
+  "skills": "./skills/",
+  "rules": "./rules/",
+  "commands": [
+    "commands/bd-setup.md",
+    "commands/bd-search.md",
+    "commands/bd-scrape.md",
+    "commands/bd-browser.md",
+    "commands/bd-data.md",
+    "commands/bd-status.md",
+    "commands/bd-code.md"
+  ]
+}

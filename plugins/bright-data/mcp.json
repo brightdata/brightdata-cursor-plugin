@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "Bright Data": {
+      "command": "npx",
+      "args": ["@brightdata/mcp"],
+      "env": {
+        "API_TOKEN": "${BRIGHT_DATA_API_TOKEN}",
+        "WEB_UNLOCKER_ZONE": "${BRIGHT_DATA_UNLOCKER_ZONE}",
+        "BROWSER_ZONE": "${BRIGHT_DATA_BROWSER_ZONE}"
+      }
+    }
+  }
+}

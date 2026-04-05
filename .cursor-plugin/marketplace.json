@@ -12,7 +12,7 @@
   "plugins": [
     {
       "name": "bright-data",
-      "source": "plugins/bright-data",
+      "source": "bright-data",
       "description": "Web search, content extraction, structured data, and browser automation powered by Bright Data's web intelligence platform."
     }
   ]
